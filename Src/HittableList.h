@@ -13,7 +13,7 @@ public:
     HittableList(shared_ptr<Hittable> Object) {Add(Object);}
 
     void Clear() {Objects.clear();}
-    void Add() { shared_ptr<Hittable> Object} {Objects.push_back(Object);}
+    void Add(shared_ptr<Hittable> Object) {Objects.push_back(Object);}
 
     virtual bool Hit(const Ray& r, double t_Min, double t_Max, HitRecord& Rec) const override;
 

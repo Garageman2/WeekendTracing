@@ -1,6 +1,6 @@
 #include "Sphere.h"
 
-bool Sphere::Hit(const Ray &r, double t_Min, double t_Max, HitRecord &Rec) const
+bool Sphere::Hit(const Ray& r, double t_Min, double t_Max, HitRecord& Rec) const
 {
     Vec3 Oc = r.Origin() - Center;
     auto a = r.Direction().LengthSquared();
@@ -10,7 +10,8 @@ bool Sphere::Hit(const Ray &r, double t_Min, double t_Max, HitRecord &Rec) const
     if(Discriminant < 0) {return false;}
     auto Sqrtd = sqrt(Discriminant);
 
-    //Find nearest root
+    //Find the nearest root
+
     auto Root = (-HalfB - Sqrtd) / a;
     if(Root < t_Min || t_Max < Root)
     {
