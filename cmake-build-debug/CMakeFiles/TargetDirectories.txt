@@ -1,3 +1,3 @@
-/Users/Bailey/Desktop/Things/Code/WeekendTracing/cmake-build-debug/CMakeFiles/WeekendTracing.dir
-/Users/Bailey/Desktop/Things/Code/WeekendTracing/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Bailey/Desktop/Things/Code/WeekendTracing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/CMakeFiles/WeekendTracing.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
