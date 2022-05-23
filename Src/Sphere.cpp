@@ -19,5 +19,6 @@ bool Sphere::Hit(const Ray &r, double t_Min, double t_Max, HitRecord &Rec) const
     }
     Rec.t = Root;
     Rec.P = r.At(Rec.t);
-    Rec.Normal = (Rec.P - Center) / Radius;
+    Vec3 OutwardNormal = (Rec.P - Center) / Radius;
+    Rec.SetFaceNormal(r,OutwardNormal);
 }
