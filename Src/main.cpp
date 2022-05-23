@@ -7,17 +7,17 @@
 double HitSphere(const Point3& Center, double Radius, const Ray& r)
 {
     Vec3 Oc = r.Origin() - Center;
-    auto a = dot(r.Direction(),r.Direction());
-    auto b =  2.0 * dot(Oc, r.Direction());
-    auto c = dot(Oc,Oc) - Radius*Radius;
-    auto Discriminant = b*b -4*a*c;
+    auto a = r.Direction().LengthSquared();
+    auto HalfB = dot(Oc, r.Direction());
+    auto c = Oc.LengthSquared() - Radius*Radius;
+    auto Discriminant = HalfB*HalfB-a*c;
     if (Discriminant < 0)
     {
         return -1.0;
     }
     else
     {
-        return(-b -sqrt(Discriminant)) / (2.0*a);
+        return(-HalfB - sqrt(Discriminant))/a;
     }
 }
 

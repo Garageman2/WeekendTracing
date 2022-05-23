@@ -56,6 +56,13 @@ build CMakeFiles/WeekendTracing.dir/Src/main.cpp.o: CXX_COMPILER__WeekendTracing
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
+build CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/Sphere.cpp || cmake_object_order_depends_target_WeekendTracing
+  DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++2a
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src
+  OBJECT_DIR = CMakeFiles/WeekendTracing.dir
+  OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target WeekendTracing
@@ -64,7 +71,7 @@ build CMakeFiles/WeekendTracing.dir/Src/main.cpp.o: CXX_COMPILER__WeekendTracing
 #############################################
 # Link the executable WeekendTracing
 
-build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o
+build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   POST_BUILD = :
