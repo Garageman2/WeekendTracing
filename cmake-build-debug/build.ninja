@@ -70,6 +70,13 @@ build CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o: CXX_COMPILER__WeekendTra
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
+build CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/HittableList.cpp || cmake_object_order_depends_target_WeekendTracing
+  DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++2a
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src
+  OBJECT_DIR = CMakeFiles/WeekendTracing.dir
+  OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target WeekendTracing
@@ -78,7 +85,7 @@ build CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o: CXX_COMPILER__WeekendTra
 #############################################
 # Link the executable WeekendTracing
 
-build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o
+build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   POST_BUILD = :

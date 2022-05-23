@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 INCLUDE_DIRECTORIES(Src)
 
-add_executable(WeekendTracing Src/main.cpp Src/Sphere.cpp Src/Hittable.cpp)
+add_executable(WeekendTracing Src/main.cpp Src/Sphere.cpp Src/Hittable.cpp Src/HittableList.cpp)

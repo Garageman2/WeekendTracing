@@ -1,7 +1,6 @@
 # ninja log v5
-1090	1168	1653332538604574231	WeekendTracing	6b72037d50e26b1e
-1	218	1653334194314596455	build.ninja	144cb976d8669c18
-5	1089	1653332538522567618	CMakeFiles/WeekendTracing.dir/Src/main.cpp.o	bcd67a4cb82bf5ff
-4	941	1653335002964372849	CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o	517a638652f28028
-5	961	1653335002985427518	CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o	c0c4da7bcff067f6
 961	1038	1653335003065811251	WeekendTracing	a1a57cc7a7028e8e
+4	941	1653335002964372849	CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o	517a638652f28028
+1	218	1653335101800398952	build.ninja	144cb976d8669c18
+5	1089	1653332538522567618	CMakeFiles/WeekendTracing.dir/Src/main.cpp.o	bcd67a4cb82bf5ff
+5	961	1653335002985427518	CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o	c0c4da7bcff067f6
