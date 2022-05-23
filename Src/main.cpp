@@ -2,12 +2,32 @@
 #include <fstream>
 #include "Vector3.h"
 #include "Color.h"
+#include "Ray.h"
+
+Color RayColor(const Ray& r)
+{
+    Vec3 UnitDirection = UnitVector(r.Direction());
+    auto t = 0.5*(UnitDirection.y()+1.0);
+    return (1.0-t)*Color(1.0,1.0,1.0)+ t*Color(0.5,0.7,1.0);
+}
 
 int main() {
 
     //basics
+    const auto AspectRatio = 16/9;
     const int ImageWidth = 512;
-    const int ImageHeight = 512;
+    const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
+
+    //Camera
+    double ViewportHeight = 2.0;
+    double ViewportWidth = 2.0;
+    double FocalLength = 1.0;
+
+    //extents
+    Point3 Origin = Point3(0,0,0);
+    Point3 Horizontal = Vec3(ViewportWidth,0,0);
+    Point3 Vertical = Vec3(0,ViewportHeight,0);
+    Point3 LowerLeftCorner = Origin-Horizontal/2 - Vertical/2 - Vec3(0,0,FocalLength);
 
     //Render
     std::ofstream OutputFile;
@@ -19,7 +39,10 @@ int main() {
         std::cout << "Writing line " << ImageHeight-j << std::endl;
         for(int i = 0; i < ImageWidth; i++)
         {
-            Color PixelColor(double(i)/(ImageWidth),(double(j)/ImageHeight),.5);
+            double u = double(i) / ImageWidth;
+            double v = double(j) / ImageHeight;
+            Ray r(Origin,LowerLeftCorner+ u*Horizontal + v*Vertical - Origin);
+            Color PixelColor = RayColor(r);
             WriteColor(OutputFile,PixelColor);
         }
     }
