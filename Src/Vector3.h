@@ -108,4 +108,49 @@ inline Vec3 Cross(const Vec3 &u, const Vec3 &v)
 inline Vec3 UnitVector(Vec3 v)
 {
     return v/v.Length();
+<<<<<<< Updated upstream
 }
+=======
+}
+
+inline Vec3 RandomInUnitSphere()
+{
+    while(true)
+    {
+        Vec3 P = Vec3::Random(-1,1);
+        if(P.LengthSquared()>=1) continue;
+        return P;
+    }
+}
+
+inline Vec3 RandomUnitVector()
+{
+    return UnitVector(RandomInUnitSphere());
+}
+
+inline Vec3 RandomInHemisphere(const Vec3& Normal)
+{
+    Vec3 InUSphere = RandomInUnitSphere();
+    if(dot(InUSphere,Normal) > 0.0)
+    {
+        return InUSphere;
+    }
+    else
+    {
+        return -InUSphere;
+    }
+}
+
+inline Vec3 Reflect(const Vec3& v, const Vec3& n)
+{
+    return v - 2*dot(v,n)*n;
+}
+
+inline Vec3 Refract(const Vec3& UV, const Vec3& N, double EtaRatio)
+{
+    auto CosTheta = fmin(dot(-UV,N),1.0);
+    Vec3 ROutPerp = EtaRatio * (UV + CosTheta*N);
+    Vec3 ROutParallel = -sqrt(fabs(1.0-ROutPerp.LengthSquared())) * N;
+    return ROutPerp + ROutParallel;
+}
+>>>>>>> Stashed changes
