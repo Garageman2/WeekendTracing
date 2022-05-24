@@ -42,6 +42,3 @@ cmake-build-debug/WeekendTracing
 cmake-build-debug/.ninja_deps
 cmake-build-debug/.ninja_log
 *.log
-cmake-build-debug/.ninja_log
-cmake-build-debug/.ninja_deps
-*.log

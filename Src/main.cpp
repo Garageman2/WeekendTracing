@@ -10,11 +10,12 @@ Color RayColor(const Ray& r, const Hittable& World)
     HitRecord Rec;
     if(World.Hit(r,0,Infinity,Rec))
     {
+        //return Color(0.0,1.0,0.0);
         return 0.5 * (Rec.Normal + Color(1,1,1));
     }
     Vec3 UnitDirection  = UnitVector(r.Direction());
     auto t = 0.5*(UnitDirection.y() + 1.0);
-    return (1.0-t)*Color(1.0,1.0,1.0) + t*Color(0.5,0.7,1.0);
+    return (1.0-t)*Color(0.7,1.0,1.0) + t*Color(0.5,0.7,1.0);
 }
 
 
@@ -22,8 +23,8 @@ int main() {
 
     //basics
     const double AspectRatio = 16.0 / 9.0;
-    const int ImageWidth = 64;
-    const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
+    const int ImageWidth = 512;
+    const int ImageHeight = static_cast<int>(512);
 
     //Camera
     double ViewportHeight = 2.0;
@@ -32,9 +33,8 @@ int main() {
 
     //World
     HittableList World;
-    World.Add(make_shared<Sphere>(Point3(0,0,-1),500));
+    World.Add(make_shared<Sphere>(Point3(0,0,-1),.5));
     World.Add(make_shared<Sphere>(Point3(0,-100.6,-1),100));
-    Sphere Test(Point3(0,0,0),20);
 
     //extents
     Point3 Origin = Point3(0,0,0);
@@ -55,7 +55,7 @@ int main() {
             double u = double(i) / ImageWidth;
             double v = double(j) / ImageHeight;
             Ray r(Origin,LowerLeftCorner+ u*Horizontal + v*Vertical - Origin);
-            Color PixelColor = RayColor(r,Test);
+            Color PixelColor = RayColor(r,World);
             WriteColor(OutputFile,PixelColor);
         }
     }
