@@ -1,50 +1,40 @@
 #include <iostream>
 #include <fstream>
-#include "Vector3.h"
+#include "RTWeekend.h"
 #include "Color.h"
-#include "Ray.h"
+#include "HittableList.h"
+#include "Sphere.h"
 
-double HitSphere(const Point3& Center, double Radius, const Ray& r)
+Color RayColor(const Ray& r, const Hittable& World)
 {
-    Vec3 Oc = r.Origin() - Center;
-    auto a = r.Direction().LengthSquared();
-    auto HalfB = dot(Oc, r.Direction());
-    auto c = Oc.LengthSquared() - Radius*Radius;
-    auto Discriminant = HalfB*HalfB-a*c;
-    if (Discriminant < 0)
+    HitRecord Rec;
+    if(World.Hit(r,0,Infinity,Rec))
     {
-        return -1.0;
+        //return Color(0.0,1.0,0.0);
+        return 0.5 * (Rec.Normal + Color(1,1,1));
     }
-    else
-    {
-        return(-HalfB - sqrt(Discriminant))/a;
-    }
+    Vec3 UnitDirection  = UnitVector(r.Direction());
+    auto t = 0.5*(UnitDirection.y() + 1.0);
+    return (1.0-t)*Color(0.7,1.0,1.0) + t*Color(0.5,0.7,1.0);
 }
 
-Color RayColor(const Ray& r)
-{
-    auto t = HitSphere(Point3(0,0,-1),0.5,r);
-    if(t>0.0)
-    {
-        Vec3 N = UnitVector(r.At(t)-Vec3(0,0,-1));
-        return 0.5*Color(N.x()+1,N.y()+1,N.z()+1);
-    }
-    Vec3 UnitDirection = UnitVector(r.Direction());
-    t = 0.5*(UnitDirection.y()+1.0);
-    return (1.0-t)*Color(1.0,1.0,1.0)+ t*Color(0.5,0.7,1.0);
-}
 
 int main() {
 
     //basics
-    const auto AspectRatio = 16/9;
-    const int ImageWidth = 1024;
-    const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
+    const double AspectRatio = 16.0 / 9.0;
+    const int ImageWidth = 512;
+    const int ImageHeight = static_cast<int>(512);
 
     //Camera
     double ViewportHeight = 2.0;
     double ViewportWidth = 2.0;
     double FocalLength = 1.0;
+
+    //World
+    HittableList World;
+    World.Add(make_shared<Sphere>(Point3(0,0,-1),.5));
+    World.Add(make_shared<Sphere>(Point3(0,-100.6,-1),100));
 
     //extents
     Point3 Origin = Point3(0,0,0);
@@ -65,7 +55,7 @@ int main() {
             double u = double(i) / ImageWidth;
             double v = double(j) / ImageHeight;
             Ray r(Origin,LowerLeftCorner+ u*Horizontal + v*Vertical - Origin);
-            Color PixelColor = RayColor(r);
+            Color PixelColor = RayColor(r,World);
             WriteColor(OutputFile,PixelColor);
         }
     }
