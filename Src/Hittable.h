@@ -2,12 +2,16 @@
 
 #include "RTWeekend.h"
 
+class Material;
+
 struct HitRecord
 {
     Point3 P;
     Vec3 Normal;
     double t;
     bool FrontFace;
+
+    shared_ptr<Material> Mat_ptr;
 
     void SetFaceNormal(const Ray& r, const Vec3& OutwardNormal);
 };

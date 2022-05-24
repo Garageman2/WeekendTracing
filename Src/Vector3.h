@@ -58,6 +58,12 @@ public:
         return Vec3(RandomDouble(Min,Max),RandomDouble(Min,Max),RandomDouble(Min,Max));
     }
 
+    inline bool NearZero()
+    {
+        const auto s = 1e-8;
+        return (fabs(e[0]) < s) && (fabs(e[1]) < s) && (fabs(e[2]) < s);
+    }
+
 public:
     double e[3];
 
@@ -146,5 +152,10 @@ inline Vec3 RandomInHemisphere(const Vec3& Normal)
     {
         return -InUSphere;
     }
+}
+
+inline Vec3 Reflect(const Vec3& v, const Vec3& n)
+{
+    return v - 2*dot(v,n)*n;
 }
 
