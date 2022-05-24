@@ -18,9 +18,11 @@ Color RayColor(const Ray& r, const Hittable& World, int Depth)
         return Color(0,0,0);
     }
 
+    if (World.Hit(r,0.001, Infinity, Rec)) {}
+
     if(World.Hit(r,0,Infinity,Rec))
     {
-        Point3 Target = Rec.P + Rec.Normal + RandomInUnitSphere();
+        Point3 Target = Rec.P + RandomInHemisphere(Rec.Normal);
         return 0.5 * RayColor(Ray(Rec.P, Target-Rec.P),World, Depth-1);
     }
     Vec3 UnitDirection  = UnitVector(r.Direction());
@@ -45,7 +47,7 @@ int main() {
     HittableList World;
     World.Add(make_shared<Sphere>(Point3(0,0,-1),.5));
     World.Add(make_shared<Sphere>(Point3(0,-100.6,-1),100));
-    World.Add(make_shared<Sphere>(Point3(1,1,-1),.5));
+    //World.Add(make_shared<Sphere>(Point3(1,1,-1),.5));
 
     //Render
     std::ofstream OutputFile;
