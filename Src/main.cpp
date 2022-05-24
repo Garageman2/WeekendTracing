@@ -4,6 +4,7 @@
 #include "Color.h"
 #include "HittableList.h"
 #include "Sphere.h"
+#include "Camera.h"
 
 Color RayColor(const Ray& r, const Hittable& World)
 {
@@ -24,23 +25,17 @@ int main() {
     //basics
     const double AspectRatio = 16.0 / 9.0;
     const int ImageWidth = 512;
-    const int ImageHeight = static_cast<int>(512);
+    const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
+    const int SamplesPerPixel = 100;
 
     //Camera
-    double ViewportHeight = 2.0;
-    double ViewportWidth = 2.0;
-    double FocalLength = 1.0;
+    Camera Cam;
 
     //World
     HittableList World;
     World.Add(make_shared<Sphere>(Point3(0,0,-1),.5));
     World.Add(make_shared<Sphere>(Point3(0,-100.6,-1),100));
-
-    //extents
-    Point3 Origin = Point3(0,0,0);
-    Point3 Horizontal = Vec3(ViewportWidth,0,0);
-    Point3 Vertical = Vec3(0,ViewportHeight,0);
-    Point3 LowerLeftCorner = Origin-Horizontal/2 - Vertical/2 - Vec3(0,0,FocalLength);
+    World.Add(make_shared<Sphere>(Point3(1,1,-1),.5));
 
     //Render
     std::ofstream OutputFile;
@@ -52,11 +47,15 @@ int main() {
         std::cout << "Writing line " << ImageHeight-j << std::endl;
         for(int i = 0; i < ImageWidth; i++)
         {
-            double u = double(i) / ImageWidth;
-            double v = double(j) / ImageHeight;
-            Ray r(Origin,LowerLeftCorner+ u*Horizontal + v*Vertical - Origin);
-            Color PixelColor = RayColor(r,World);
-            WriteColor(OutputFile,PixelColor);
+            Color PixelColor(0,0,0);
+            for (int s = 0; s < SamplesPerPixel; ++s)
+            {
+                auto U = ((i + RandomDouble()) / ImageWidth);
+                auto V = ((j + RandomDouble()) / ImageHeight);
+                Ray R = Cam.GetRay(U,V);
+                PixelColor += RayColor(R, World);
+            }
+            WriteColor(OutputFile,PixelColor,SamplesPerPixel);
         }
     }
 

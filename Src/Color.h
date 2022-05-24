@@ -2,9 +2,18 @@
 #include "Vector3.h"
 #include <iostream>
 
-void WriteColor(std::ostream &out, Color PixelColor)
+void WriteColor(std::ostream &out, Color PixelColor, int SamplesPerPixel)
 {
-    out <<static_cast<int>(255.999 * PixelColor.x())<< ' '
-        <<static_cast<int>(255.999 * PixelColor.y())<< ' '
-        <<static_cast<int>(255.999 * PixelColor.z())<< '\n';
+    double R = PixelColor.x();
+    double G = PixelColor.y();
+    double B = PixelColor.z();
+
+    double Scale = 1.0 / SamplesPerPixel;
+    R *= Scale;
+    G *= Scale;
+    B *= Scale;
+
+    out <<static_cast<int>(255.999 * Clamp(R,0.0,0.999))<< ' '
+        <<static_cast<int>(255.999 * Clamp(G,0.0,0.999))<< ' '
+        <<static_cast<int>(255.999 * Clamp(B,0.0,0.999))<< '\n';
 }
