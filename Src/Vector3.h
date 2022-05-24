@@ -48,6 +48,16 @@ public:
         return e[0]*e[0] + e[1]*e[1] + e[2]*e[2];
     }
 
+    inline static Vec3 Random()
+    {
+        return Vec3(RandomDouble(),RandomDouble(),RandomDouble());
+    }
+
+    inline static Vec3 Random(double Min, double Max)
+    {
+        return Vec3(RandomDouble(Min,Max),RandomDouble(Min,Max),RandomDouble(Min,Max));
+    }
+
 public:
     double e[3];
 
@@ -109,3 +119,14 @@ inline Vec3 UnitVector(Vec3 v)
 {
     return v/v.Length();
 }
+
+inline Vec3 RandomInUnitSphere()
+{
+    while(true)
+    {
+        Vec3 P = Vec3::Random(-1,1);
+        if(P.LengthSquared()>=1) continue;
+        return P;
+    }
+}
+

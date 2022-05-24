@@ -3,10 +3,7 @@
 #include <cmath>
 #include <memory>
 #include <limits>
-#include <cstdlib>
-
-#include "Ray.h"
-#include "Vector3.h"
+#include <random>
 
 using std::shared_ptr;
 using std::make_shared;
@@ -22,7 +19,9 @@ inline double DegreesToRadians(double Degrees)
 
 inline double RandomDouble()
 {
-    return rand() / (RAND_MAX + 1.0);
+    static std::uniform_real_distribution<double> Distribution(0.0,1.0);
+    static std::mt19937 Generator;
+    return Distribution(Generator);
 }
 
 inline double RandomDouble(double Min, double Max)
@@ -36,3 +35,7 @@ inline double Clamp(double X, double Min, double Max)
     if (X > Max) {return Max;}
     return X;
 }
+
+#include "Ray.h"
+#include "Vector3.h"
+

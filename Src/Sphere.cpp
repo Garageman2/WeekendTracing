@@ -17,7 +17,6 @@ bool Sphere::Hit(const Ray& r, double t_Min, double t_Max, HitRecord& Rec) const
     {
         Root = (-HalfB + sqrtd) / a;
         if(Root < t_Min || t_Max < Root) {return false;}
-        std::cout << "Hit!" << std::endl;
     }
     Rec.t = Root;
     Rec.P = r.At(Rec.t);

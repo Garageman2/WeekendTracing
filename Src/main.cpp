@@ -1,18 +1,27 @@
 #include <iostream>
 #include <fstream>
 #include "RTWeekend.h"
+
+#include "Camera.h"
 #include "Color.h"
 #include "HittableList.h"
 #include "Sphere.h"
-#include "Camera.h"
 
-Color RayColor(const Ray& r, const Hittable& World)
+
+
+Color RayColor(const Ray& r, const Hittable& World, int Depth)
 {
     HitRecord Rec;
+
+    if(Depth <= 0)
+    {
+        return Color(0,0,0);
+    }
+
     if(World.Hit(r,0,Infinity,Rec))
     {
-        //return Color(0.0,1.0,0.0);
-        return 0.5 * (Rec.Normal + Color(1,1,1));
+        Point3 Target = Rec.P + Rec.Normal + RandomInUnitSphere();
+        return 0.5 * RayColor(Ray(Rec.P, Target-Rec.P),World, Depth-1);
     }
     Vec3 UnitDirection  = UnitVector(r.Direction());
     auto t = 0.5*(UnitDirection.y() + 1.0);
@@ -24,9 +33,10 @@ int main() {
 
     //basics
     const double AspectRatio = 16.0 / 9.0;
-    const int ImageWidth = 512;
+    const int ImageWidth = 256;
     const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
     const int SamplesPerPixel = 100;
+    const int MaxDepth = 5;
 
     //Camera
     Camera Cam;
@@ -53,7 +63,7 @@ int main() {
                 auto U = ((i + RandomDouble()) / ImageWidth);
                 auto V = ((j + RandomDouble()) / ImageHeight);
                 Ray R = Cam.GetRay(U,V);
-                PixelColor += RayColor(R, World);
+                PixelColor += RayColor(R, World, MaxDepth);
             }
             WriteColor(OutputFile,PixelColor,SamplesPerPixel);
         }
