@@ -48,3 +48,11 @@
 2444	2512	1653486580125000590	WeekendTracing	b0dbfbfa0f7db11c
 4	2197	1653486736838060525	CMakeFiles/WeekendTracing.dir/Src/main.cpp.o	bcd67a4cb82bf5ff
 2198	2278	1653486736925035326	WeekendTracing	b0dbfbfa0f7db11c
+17	5165	1653488046291890945	CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o	517a638652f28028
+19	5194	1653488046311113109	CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o	c0c4da7bcff067f6
+15	6895	1653488048020804680	CMakeFiles/WeekendTracing.dir/Src/main.cpp.o	bcd67a4cb82bf5ff
+5194	8378	1653488049506306283	CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o	c12819a1f3cd48a
+5165	8416	1653488049549903270	CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o	5f5e4283a12831f6
+8416	8553	1653488049694459273	WeekendTracing	b0dbfbfa0f7db11c
+5	1694	1653495339174464018	CMakeFiles/WeekendTracing.dir/Src/main.cpp.o	bcd67a4cb82bf5ff
+1694	1779	1653495339264949225	WeekendTracing	b0dbfbfa0f7db11c

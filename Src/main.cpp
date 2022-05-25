@@ -14,6 +14,62 @@
 //TODO: OGL QUAD VIEW WITH IMGui
 //TODO: ADD OIDN
 
+HittableList RandomScene()
+{
+    HittableList World;
+
+    auto GroundMaterial = make_shared<Lambertian>(Color(0.5,0.5,0.5));
+    World.Add(make_shared<Sphere>(Point3(0,-1000,0),1000,GroundMaterial));
+
+    for(int A = -11; A < 11; A++)
+    {
+        for(int B = -11; B < 11; B++)
+        {
+            double ChooseMat = RandomDouble();
+            Point3 Center(A + 0.9*RandomDouble(),0.2,B+0.9*RandomDouble());
+
+            if((Center-Point3(4.0,0.2,0.0)).Length() > 0.9)
+            {
+                shared_ptr<Material> SphereMaterial;
+
+                if(ChooseMat < 0.8)
+                {
+                    //Diffuse
+                    auto Albedo = Color::Random() * Color::Random();
+                    SphereMaterial = make_shared<Lambertian>(Albedo);
+                    World.Add(make_shared<Sphere>(Center,0.2,SphereMaterial));
+                }
+
+                else if(ChooseMat < .95)
+                {
+                    auto Albedo = Color::Random(0.5,1.0);
+                    auto Roughness = RandomDouble(0,0.5);
+                    SphereMaterial = make_shared<Metal>(Albedo,Roughness);
+                    World.Add(make_shared<Sphere>(Center,0.2,SphereMaterial));
+                }
+                else
+                {
+                    SphereMaterial = make_shared<Dielectric>(1.333);
+                    World.Add(make_shared<Sphere>(Center,0.2,SphereMaterial));
+                }
+
+            }
+        }
+    }
+
+    auto Mat1 = make_shared<Dielectric>(1.333);
+    World.Add(make_shared<Sphere>(Point3(0.0,1.0,0.0),1.0,Mat1));
+
+    auto Mat2 = make_shared<Lambertian>(Color(0.4,0.2,0.1));
+    World.Add(make_shared<Sphere>(Point3(-4.0,1.0,0.0),1.0,Mat2));
+
+    auto Mat3 = make_shared<Metal>(Color(0.7,0.6,0.5),0.0);
+    World.Add(make_shared<Sphere>(Point3(4.0,1.0,0.0),1.0,Mat3));
+
+    return World;
+
+}
+
 Color RayColor(const Ray& r, const Hittable& World, int Depth)
 {
     HitRecord Rec;
@@ -41,35 +97,24 @@ Color RayColor(const Ray& r, const Hittable& World, int Depth)
 int main() {
 
     //basics
-    const double AspectRatio = 16.0 / 9.0;
-    const int ImageWidth = 256;
+    const double AspectRatio = 3.0/2.0;
+    const int ImageWidth = 1200;
     const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
-    const int SamplesPerPixel = 100;
+    const int SamplesPerPixel = 500;
     const int MaxDepth = 50;
 
     //Camera
     auto R = cos(Pi/4);
-    Point3 LookFrom(3,3,2);
-    Point3 LookAt(0,0,-1);
+    Point3 LookFrom(13,2,3);
+    Point3 LookAt(0,0,0);
     Vec3 VUp(0,1,0);
-    auto DistToFocus = (LookFrom-LookAt).Length();
-    auto Aperture = 2.0;
-    
+    auto DistToFocus = 10.0;
+    auto Aperture = 0.1;
+
     Camera Cam(LookFrom,LookAt,VUp,20.0,AspectRatio,Aperture,DistToFocus);
 
     //World
-    HittableList World;
-
-    auto MaterialGround = make_shared<Lambertian>(Color(0.8,0.8,0.0));
-    auto MaterialCenter = make_shared<Lambertian>(Color(0.3,0.6,1.0));
-    auto MaterialLeft = make_shared<Dielectric>(1.33);
-    auto MaterialRight = make_shared<Metal>(Color(0.8,0.6,0.2),1.0);
-
-
-    World.Add(make_shared<Sphere>(Point3(0.0,-100.5,-1.0),100.0,MaterialGround));
-    World.Add(make_shared<Sphere>(Point3(0.0,0.0,-1.0),0.5,MaterialCenter));
-    World.Add(make_shared<Sphere>(Point3(-1.0,0.0,-1.0),0.5,MaterialLeft));
-    World.Add(make_shared<Sphere>(Point3(1.0,0.0,-1.0),0.5,MaterialRight));
+    auto World = RandomScene();
 
     //Render
     std::ofstream OutputFile;
