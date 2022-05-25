@@ -4,24 +4,34 @@
 class Camera
 {
 public:
-    Camera()
+    Camera(Point3 LookFrom, Point3 LookAt, Vec3 VUp, double VFOV, double AspectRatio, double Aperture, double FocusDist)
     {
-        double AspectRatio = 16.0/9.0;
-        double ViewportHeight = 2.0;
+        auto Theta = DegreesToRadians(VFOV);
+        auto H = tan(Theta/2);
+        double ViewportHeight = 2.0 * H;
         double ViewportWidth = AspectRatio * ViewportHeight;
         double FocalLength = 1.0;
 
-        Origin = Point3(0,0,0);
-        Horizontal = Vec3(ViewportWidth,0.0,0.0);
-        Vertical = Vec3(0.0,ViewportHeight,0.0);
-        LowerLeftCorner = Origin - Horizontal/2 - Vertical/2 - Vec3(0,0,FocalLength);
+        W = UnitVector(LookFrom-LookAt);
+        U = UnitVector(Cross(VUp,W));
+        V = Cross(W,U);
+
+        Origin = LookFrom;
+        Horizontal = FocusDist * ViewportWidth * U;
+        Vertical = FocusDist * ViewportHeight * V;
+        LowerLeftCorner = Origin - Horizontal/2 - Vertical/2 - FocusDist*W;
+
+        LensRadius = Aperture/2;
+
     }
 
-    Ray GetRay(double U, double V) const;
+    Ray GetRay(double S, double T) const;
 
 private:
     Point3 Origin;
     Point3 LowerLeftCorner;
     Vec3 Horizontal;
     Vec3 Vertical;
+    Vec3 U,V,W;
+    double LensRadius;
 };

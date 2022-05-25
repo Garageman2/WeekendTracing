@@ -48,19 +48,27 @@ int main() {
     const int MaxDepth = 50;
 
     //Camera
-    Camera Cam;
+    auto R = cos(Pi/4);
+    Point3 LookFrom(3,3,2);
+    Point3 LookAt(0,0,-1);
+    Vec3 VUp(0,1,0);
+    auto DistToFocus = (LookFrom-LookAt).Length();
+    auto Aperture = 2.0;
+    
+    Camera Cam(LookFrom,LookAt,VUp,20.0,AspectRatio,Aperture,DistToFocus);
 
     //World
     HittableList World;
 
     auto MaterialGround = make_shared<Lambertian>(Color(0.8,0.8,0.0));
-    auto MaterialCenter = make_shared<Lambertian>(Color(0.3,0.6,0.8));
-    auto MaterialLeft = make_shared<Dielectric>(1.5);
+    auto MaterialCenter = make_shared<Lambertian>(Color(0.3,0.6,1.0));
+    auto MaterialLeft = make_shared<Dielectric>(1.33);
     auto MaterialRight = make_shared<Metal>(Color(0.8,0.6,0.2),1.0);
+
 
     World.Add(make_shared<Sphere>(Point3(0.0,-100.5,-1.0),100.0,MaterialGround));
     World.Add(make_shared<Sphere>(Point3(0.0,0.0,-1.0),0.5,MaterialCenter));
-    World.Add(make_shared<Sphere>(Point3(-1.0,0.0,-1.0),-0.5,MaterialLeft));
+    World.Add(make_shared<Sphere>(Point3(-1.0,0.0,-1.0),0.5,MaterialLeft));
     World.Add(make_shared<Sphere>(Point3(1.0,0.0,-1.0),0.5,MaterialRight));
 
     //Render

@@ -166,3 +166,13 @@ inline Vec3 Refract(const Vec3& uv, const Vec3& n, double EtaiOverEtat)
     Vec3 ROutParallel = -sqrt(fabs(1.0-ROutPerp.LengthSquared())) * n;
     return ROutPerp + ROutParallel;
 }
+
+inline Vec3 RandomInUnitDisk()
+{
+    while(true)
+    {
+        auto P = Vec3(RandomDouble(-1,1),RandomDouble(-1,1),0);
+        if(P.LengthSquared()>=1) { continue;}
+        return P;
+    }
+}

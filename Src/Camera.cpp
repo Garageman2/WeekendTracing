@@ -1,6 +1,8 @@
 #include "Camera.h"
 
-Ray Camera::GetRay(double U, double V) const
+Ray Camera::GetRay(double S, double T) const
 {
-    return Ray(Origin, LowerLeftCorner + U*Horizontal + V*Vertical - Origin);
+    Vec3 Rd = LensRadius * RandomInUnitDisk();
+    Vec3 Offset = U * Rd.x() + V * Rd.y();
+    return Ray(Origin + Offset, LowerLeftCorner + S*Horizontal + T*Vertical - Origin - Offset);
 }
