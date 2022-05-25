@@ -159,3 +159,10 @@ inline Vec3 Reflect(const Vec3& v, const Vec3& n)
     return v - 2*dot(v,n)*n;
 }
 
+inline Vec3 Refract(const Vec3& uv, const Vec3& n, double EtaiOverEtat)
+{
+    auto CosTheta = fmin(dot(-uv,n),1.0);
+    Vec3 ROutPerp = EtaiOverEtat * (uv + CosTheta * n);
+    Vec3 ROutParallel = -sqrt(fabs(1.0-ROutPerp.LengthSquared())) * n;
+    return ROutPerp + ROutParallel;
+}

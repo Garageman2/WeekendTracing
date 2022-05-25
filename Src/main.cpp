@@ -23,7 +23,6 @@ Color RayColor(const Ray& r, const Hittable& World, int Depth)
         return Color(0,0,0);
     }
 
-    if (World.Hit(r,0.001, Infinity, Rec)) {}
 
     if(World.Hit(r,0,Infinity,Rec))
     {
@@ -55,8 +54,8 @@ int main() {
     HittableList World;
 
     auto MaterialGround = make_shared<Lambertian>(Color(0.8,0.8,0.0));
-    auto MaterialCenter = make_shared<Lambertian>(Color(0.7,0.3,0.3));
-    auto MaterialLeft = make_shared<Metal>(Color(0.8,0.8,0.8),.3);
+    auto MaterialCenter = make_shared<Dielectric>(1.5);
+    auto MaterialLeft = make_shared<Dielectric>(1.5);
     auto MaterialRight = make_shared<Metal>(Color(0.8,0.6,0.2),1.0);
 
     World.Add(make_shared<Sphere>(Point3(0.0,-100.5,-1.0),100.0,MaterialGround));

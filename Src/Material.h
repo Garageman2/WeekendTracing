@@ -4,8 +4,6 @@ struct HitRecord;
 
 #include "RTWeekend.h"
 
-
-
 class Material
 {
 public:
@@ -33,6 +31,22 @@ public:
     Color Albedo;
     double Roughness;
 };
+
+class Dielectric : public Material
+{
+public:
+    Dielectric(double IndexOfRefraction) : IOR(IndexOfRefraction) {}
+
+    virtual bool Scatter(const Ray &r, const HitRecord &Rec, Color &Attenuation, Ray &Scattered) const override;
+
+
+
+public:
+    double IOR;
+};
+
+
+
 bool Lambertian::Scatter(const Ray &r, const HitRecord &Rec, Color &Attenuation, Ray &Scattered) const
 {
     auto ScatterDirection = Rec.Normal + RandomUnitVector();
@@ -51,4 +65,15 @@ bool Metal::Scatter(const Ray &r, const HitRecord &Rec, Color &Attenuation, Ray 
     Scattered = Ray(Rec.P,Reflected + Roughness*RandomInUnitSphere());
     Attenuation = Albedo;
     return (dot(Scattered.Direction(),Rec.Normal) > 0);
+}
+
+bool Dielectric::Scatter(const Ray &r, const HitRecord &Rec, Color &Attenuation, Ray &Scattered) const
+{
+    Attenuation = Color(1.0,1.0,1.0);
+    double RefractionRatio = Rec.FrontFace ? (1.0/IOR) : IOR;
+
+    Vec3 UnitDirection = UnitVector(r.Direction());
+    Vec3 Refracted = Refract(UnitDirection,Rec.Normal,RefractionRatio);
+    Scattered = Ray(Rec.P,Refracted);
+    return true;
 }
