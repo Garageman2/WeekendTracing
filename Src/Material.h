@@ -43,6 +43,13 @@ public:
 
 public:
     double IOR;
+private:
+    inline static double Reflectance(double Cosine, double RefIdx)
+    {
+        auto r0 = (1-RefIdx) / (1+RefIdx);
+        r0 = r0 * r0;
+        return r0 + (1-r0)*pow((1-Cosine),5);
+    }
 };
 
 
@@ -73,7 +80,22 @@ bool Dielectric::Scatter(const Ray &r, const HitRecord &Rec, Color &Attenuation,
     double RefractionRatio = Rec.FrontFace ? (1.0/IOR) : IOR;
 
     Vec3 UnitDirection = UnitVector(r.Direction());
-    Vec3 Refracted = Refract(UnitDirection,Rec.Normal,RefractionRatio);
-    Scattered = Ray(Rec.P,Refracted);
+
+    double CosTheta = fmin(dot(-UnitDirection,Rec.Normal),1.0);
+    double SinTheta = sqrt(1.0 - CosTheta*CosTheta);
+
+    bool CannotRefract = RefractionRatio *  SinTheta > 1.0;
+    Vec3 Direction;
+
+    if(CannotRefract)
+    {
+        Direction = Reflect(UnitDirection,Rec.Normal);
+    }
+    else
+    {
+        Direction = Refract(UnitDirection,Rec.Normal,RefractionRatio);
+    }
+
+    Scattered = Ray(Rec.P,Direction);
     return true;
 }

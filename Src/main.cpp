@@ -54,13 +54,13 @@ int main() {
     HittableList World;
 
     auto MaterialGround = make_shared<Lambertian>(Color(0.8,0.8,0.0));
-    auto MaterialCenter = make_shared<Dielectric>(1.5);
+    auto MaterialCenter = make_shared<Lambertian>(Color(0.3,0.6,0.8));
     auto MaterialLeft = make_shared<Dielectric>(1.5);
     auto MaterialRight = make_shared<Metal>(Color(0.8,0.6,0.2),1.0);
 
     World.Add(make_shared<Sphere>(Point3(0.0,-100.5,-1.0),100.0,MaterialGround));
     World.Add(make_shared<Sphere>(Point3(0.0,0.0,-1.0),0.5,MaterialCenter));
-    World.Add(make_shared<Sphere>(Point3(-1.0,0.0,-1.0),0.5,MaterialLeft));
+    World.Add(make_shared<Sphere>(Point3(-1.0,0.0,-1.0),-0.5,MaterialLeft));
     World.Add(make_shared<Sphere>(Point3(1.0,0.0,-1.0),0.5,MaterialRight));
 
     //Render
@@ -70,7 +70,7 @@ int main() {
 
     for (int j = ImageHeight-1; j>=0; j--)
     {
-        std::cout << "Writing line " << ImageHeight-j << std::endl;
+        std::cout << "Writing Line " << ImageHeight-j << " / " << ImageHeight << "\n";
         for(int i = 0; i < ImageWidth; i++)
         {
             Color PixelColor(0,0,0);
