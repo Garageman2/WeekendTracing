@@ -14,7 +14,7 @@ find_package(OpenGL REQUIRED)
 
 add_subdirectory(Vendor/GLFW)
 
-INCLUDE_DIRECTORIES(Src Vendor/STBImage/ Vendor/GLFW/include/GLFW/)
+INCLUDE_DIRECTORIES(Src Vendor/STBImage/ Vendor/GLFW/include/GLFW/ Vendor/GLAD/Include/GLAD/)
 
 add_executable(WeekendTracing Src/main.cpp Src/Sphere.cpp Src/Hittable.cpp Src/HittableList.cpp Src/Camera.cpp)
 

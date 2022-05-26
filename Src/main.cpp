@@ -16,7 +16,9 @@
 //TODO: STBI PNG
 //TODO: OPENGL IMPLEMENTATION
 //TODO: RENDER TRIANGLES IN OGL THEN PROJECT
+//TODO: MOVE MAIN WITH GL STUFF TO NEW FILE MAKE THIS A CALLABLE FUNCTION
 //TODO: Match triangles
+//TODO: RAYTRACE TRIS
 //TODO: OGL QUAD VIEW WITH IMGui
 //TODO: ADD OIDN
 
@@ -101,14 +103,23 @@ Color RayColor(const Ray& r, const Hittable& World, int Depth)
 
 
 int main() {
+
     GLFWwindow* window;
+
+    //basics
+    const double AspectRatio = 16.0/9.0;
+    const int ImageWidth = 128;
+    const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
+    const int SamplesPerPixel = 150;
+    const int MaxDepth = 25;
+
 
     /* Initialize the library */
     if (!glfwInit())
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(ImageWidth, ImageHeight, "Hello World", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -123,6 +134,15 @@ int main() {
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
+        glBegin(GL_TRIANGLES);
+        glVertex2f(-1.0f,-1.0f);
+        glVertex2f(1.0f,-1.0f);
+        glVertex2f(-1.0f,1.0f);
+
+        glVertex2f(-1.0f,1.0f);
+        glVertex2f(1.0f,-1.0f);
+        glVertex2f(1.0f,1.0f);
+        glEnd();
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
@@ -134,19 +154,11 @@ int main() {
     glfwTerminate();
 
 
-    //basics
-    const double AspectRatio = 16.0/9.0;
-    const int ImageWidth = 128;
-    const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
-    const int SamplesPerPixel = 150;
-    const int MaxDepth = 25;
-
-
     //Camera
     auto R = cos(Pi/4);
     Point3 LookFrom(13,2,3);
     Point3 LookAt(0,0,0);
-    Vec3 VUp    (0,1,0);
+    Vec3 VUp(0,1,0);
     auto DistToFocus = 10.0;
     auto Aperture = 0.1;
 
@@ -172,9 +184,10 @@ int main() {
             }
             WriteColor(Data,PixelColor,SamplesPerPixel, i + ((ImageHeight-j)*ImageWidth));
         }
-       // stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
+       stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
     }
 
+    //WARNING: this write doesn't seem to be working? GLFW crashes here maybe
     stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
 
     return 0;
