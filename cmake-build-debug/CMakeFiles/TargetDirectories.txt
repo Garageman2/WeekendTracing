@@ -7,3 +7,6 @@
 /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src/CMakeFiles/glfw.dir
 /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src/CMakeFiles/edit_cache.dir
 /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src/CMakeFiles/rebuild_cache.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLAD/CMakeFiles/glad.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLAD/CMakeFiles/edit_cache.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLAD/CMakeFiles/rebuild_cache.dir

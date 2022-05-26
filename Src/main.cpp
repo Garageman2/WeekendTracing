@@ -1,17 +1,9 @@
-#include <iostream>
-#include <fstream>
-#include "RTWeekend.h"
+#define GLFW_
 
-#include "Camera.h"
-#include "Color.h"
-#include "HittableList.h"
-#include "Sphere.h"
-#include "Material.h"
-
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image_write.h"
-
+#include "glad/glad.h"
 #include "glfw3.h"
+#include <iostream>
+
 
 //TODO: STBI PNG
 //TODO: OPENGL IMPLEMENTATION
@@ -22,173 +14,158 @@
 //TODO: OGL QUAD VIEW WITH IMGui
 //TODO: ADD OIDN
 
-HittableList RandomScene()
+int main()
 {
-    HittableList World;
-
-    auto GroundMaterial = make_shared<Lambertian>(Color(0.5,0.5,0.5));
-    World.Add(make_shared<Sphere>(Point3(0,-1000,0),1000,GroundMaterial));
-
-    for(int A = 0; A < 3; A++)
-    {
-        for(int B = 0; B < 3; B++)
-        {
-            double ChooseMat = RandomDouble();
-            Point3 Center(A*3.0 + 0.9*RandomDouble(),0.2,B*3.0+0.9*RandomDouble());
-
-            if((Center-Point3(4.0,0.2,0.0)).Length() > 0.9)
-            {
-                shared_ptr<Material> SphereMaterial;
-
-                if(ChooseMat < 0.8)
-                {
-                    //Diffuse
-                    auto Albedo = Color::Random() * Color::Random();
-                    SphereMaterial = make_shared<Lambertian>(Albedo);
-                    World.Add(make_shared<Sphere>(Center,0.2,SphereMaterial));
-                }
-
-                else if(ChooseMat < .95)
-                {
-                    auto Albedo = Color::Random(0.5,1.0);
-                    auto Roughness = RandomDouble(0,0.5);
-                    SphereMaterial = make_shared<Metal>(Albedo,Roughness);
-                    World.Add(make_shared<Sphere>(Center,0.2,SphereMaterial));
-                }
-                else
-                {
-                    SphereMaterial = make_shared<Dielectric>(1.333);
-                    World.Add(make_shared<Sphere>(Center,0.2,SphereMaterial));
-                }
-
-            }
-        }
-    }
-
-    auto Mat1 = make_shared<Dielectric>(1.333);
-    World.Add(make_shared<Sphere>(Point3(0.0,1.0,0.0),1.0,Mat1));
-
-    auto Mat2 = make_shared<Lambertian>(Color(0.4,0.2,0.1));
-    World.Add(make_shared<Sphere>(Point3(-4.0,1.0,0.0),1.0,Mat2));
-
-    auto Mat3 = make_shared<Metal>(Color(0.7,0.6,0.5),0.0);
-    World.Add(make_shared<Sphere>(Point3(4.0,1.0,0.0),1.0,Mat3));
-
-    return World;
-
-}
-
-Color RayColor(const Ray& r, const Hittable& World, int Depth)
-{
-    HitRecord Rec;
-
-    if(Depth <= 0)
-    {
-        return Color(0,0,0);
-    }
-
-
-    if(World.Hit(r,0,Infinity,Rec))
-    {
-        Ray Scattered;
-        Color Attenuation;
-        if(Rec.Mat_ptr->Scatter(r,Rec,Attenuation,Scattered))
-        {return Attenuation * RayColor(Scattered,World,Depth-1);}
-        return Color(0,0,0);
-    }
-    Vec3 UnitDirection  = UnitVector(r.Direction());
-    auto t = 0.5*(UnitDirection.y() + 1.0);
-    return (1.0-t)*Color(0.7,1.0,1.0) + t*Color(0.5,0.7,1.0);
-}
-
-
-int main() {
-
-    GLFWwindow* window;
-
     //basics
     const double AspectRatio = 16.0/9.0;
-    const int ImageWidth = 128;
+    const int ImageWidth = 512;
     const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
-    const int SamplesPerPixel = 150;
-    const int MaxDepth = 25;
 
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    /* Initialize the library */
-    if (!glfwInit())
-        return -1;
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(ImageWidth, ImageHeight, "Hello World", NULL, NULL);
-    if (!window)
+    const char *vertexShaderSource = "#version 330 core\n"
+                                     "layout (location = 0) in vec3 aPos;\n"
+                                     "void main()\n"
+                                     "{\n"
+                                     "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+                                     "}\0";
+    const char *fragmentShaderSource = "#version 330 core\n"
+                                       "out vec4 FragColor;\n"
+                                       "void main()\n"
+                                       "{\n"
+                                       "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+                                       "}\n\0";
+
+    // glfw window creation
+    // --------------------
+    GLFWwindow* window = glfwCreateWindow(600, 600, "LearnOpenGL", NULL, NULL);
+    if (window == NULL)
     {
+        std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
     }
-
-    /* Make the window's context current */
     glfwMakeContextCurrent(window);
 
-    /* Loop until the user closes the window */
+    // glad: load all OpenGL function pointers
+    // ---------------------------------------
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        return -1;
+    }
+
+
+    // build and compile our shader program
+    // ------------------------------------
+    // vertex shader
+    unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+    glCompileShader(vertexShader);
+    // check for shader compile errors
+    int success;
+    char infoLog[512];
+    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+    if (!success)
+    {
+        glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+        std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+    }
+    // fragment shader
+    unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+    glCompileShader(fragmentShader);
+    // check for shader compile errors
+    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+    if (!success)
+    {
+        glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
+    }
+    // link shaders
+    unsigned int shaderProgram = glCreateProgram();
+    glAttachShader(shaderProgram, vertexShader);
+    glAttachShader(shaderProgram, fragmentShader);
+    glLinkProgram(shaderProgram);
+    // check for linking errors
+    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+    if (!success) {
+        glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+        std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+    }
+    glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
+
+    // set up vertex data (and buffer(s)) and configure vertex attributes
+    // ------------------------------------------------------------------
+    float vertices[] = {
+            -0.5f, -0.5f, 0.0f, // left
+            0.5f, -0.5f, 0.0f, // right
+            0.0f,  0.5f, 0.0f  // top
+    };
+
+    unsigned int VBO, VAO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
+    glBindVertexArray(VAO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    // You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
+    // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
+    glBindVertexArray(0);
+
+
+    // uncomment this call to draw in wireframe polygons.
+    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+    // render loop
+    // -----------
     while (!glfwWindowShouldClose(window))
     {
-        /* Render here */
+
+        // render
+        // ------
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        glBegin(GL_TRIANGLES);
-        glVertex2f(-1.0f,-1.0f);
-        glVertex2f(1.0f,-1.0f);
-        glVertex2f(-1.0f,1.0f);
 
-        glVertex2f(-1.0f,1.0f);
-        glVertex2f(1.0f,-1.0f);
-        glVertex2f(1.0f,1.0f);
-        glEnd();
+        // draw our first triangle
+        glUseProgram(shaderProgram);
+        glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+        // glBindVertexArray(0); // no need to unbind it every time
 
-        /* Swap front and back buffers */
+        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
+        // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
-
-        /* Poll for and process events */
         glfwPollEvents();
     }
 
+    // optional: de-allocate all resources once they've outlived their purpose:
+    // ------------------------------------------------------------------------
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+    glDeleteProgram(shaderProgram);
+
+    // glfw: terminate, clearing all previously allocated GLFW resources.
+    // ------------------------------------------------------------------
     glfwTerminate();
+    return 0;
 
 
-    //Camera
-    auto R = cos(Pi/4);
-    Point3 LookFrom(13,2,3);
-    Point3 LookAt(0,0,0);
-    Vec3 VUp(0,1,0);
-    auto DistToFocus = 10.0;
-    auto Aperture = 0.1;
-
-    Camera Cam(LookFrom,LookAt,VUp,20.0,AspectRatio,Aperture,DistToFocus);
-
-    //World
-    auto World = RandomScene();
-
-   unsigned char Data[ImageWidth*ImageHeight*3] = {0};
-
-    for (int j = ImageHeight-1; j>=0; j--)
-    {
-        std::cout << "Writing Line " << ImageHeight-j << " / " << ImageHeight << "\n";
-        for(int i = 0; i < ImageWidth; i++)
-        {
-            Color PixelColor(0,0,0);
-            for (int s = 0; s < SamplesPerPixel; ++s)
-            {
-                auto U = ((i + RandomDouble()) / ImageWidth);
-                auto V = ((j + RandomDouble()) / ImageHeight);
-                Ray R = Cam.GetRay(U,V);
-                PixelColor += RayColor(R, World, MaxDepth);
-            }
-            WriteColor(Data,PixelColor,SamplesPerPixel, i + ((ImageHeight-j)*ImageWidth));
-        }
-       stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
-    }
-
-    //WARNING: this write doesn't seem to be working? GLFW crashes here maybe
-    stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
 
     return 0;
 }

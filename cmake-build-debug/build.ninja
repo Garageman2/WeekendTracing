@@ -47,40 +47,40 @@ cmake_ninja_workdir = /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTr
 #############################################
 # Order-only phony target for WeekendTracing
 
-build cmake_object_order_depends_target_WeekendTracing: phony || cmake_object_order_depends_target_glfw
+build cmake_object_order_depends_target_WeekendTracing: phony || cmake_object_order_depends_target_glad cmake_object_order_depends_target_glfw
 
 build CMakeFiles/WeekendTracing.dir/Src/main.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/main.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/main.cpp.o.d
   FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/Include/GLAD -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
 build CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/Sphere.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o.d
   FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/Include/GLAD -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
 build CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/Hittable.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o.d
   FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/Include/GLAD -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
 build CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/HittableList.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o.d
   FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/Include/GLAD -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
 build CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/Camera.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o.d
   FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/Include/GLAD -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
@@ -92,9 +92,9 @@ build CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o: CXX_COMPILER__WeekendTraci
 #############################################
 # Link the executable WeekendTracing
 
-build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o | Vendor/GLFW/src/libglfw3.a || Vendor/GLFW/src/libglfw3.a
+build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o | Vendor/GLFW/src/libglfw3.a Vendor/GLAD/libglad.a || Vendor/GLAD/libglad.a Vendor/GLFW/src/libglfw3.a
   FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
-  LINK_LIBRARIES = Vendor/GLFW/src/libglfw3.a  -framework Cocoa  -framework IOKit  -framework CoreFoundation
+  LINK_LIBRARIES = Vendor/GLFW/src/libglfw3.a  Vendor/GLAD/libglad.a  -framework Cocoa  -framework IOKit  -framework CoreFoundation
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -341,9 +341,74 @@ build Vendor/GLFW/src/CMakeFiles/update_mappings | ${cmake_ninja_workdir}Vendor/
   DESC = Updating gamepad mappings from upstream repository
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glad
+
+
+#############################################
+# Order-only phony target for glad
+
+build cmake_object_order_depends_target_glad: phony || Vendor/GLAD/CMakeFiles/glad.dir
+
+build Vendor/GLAD/CMakeFiles/glad.dir/src/glad.c.o: C_COMPILER__glad_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/src/glad.c || cmake_object_order_depends_target_glad
+  DEP_FILE = Vendor/GLAD/CMakeFiles/glad.dir/src/glad.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/include
+  OBJECT_DIR = Vendor/GLAD/CMakeFiles/glad.dir
+  OBJECT_FILE_DIR = Vendor/GLAD/CMakeFiles/glad.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glad
+
+
+#############################################
+# Link the static library Vendor/GLAD/libglad.a
+
+build Vendor/GLAD/libglad.a: C_STATIC_LIBRARY_LINKER__glad_Debug Vendor/GLAD/CMakeFiles/glad.dir/src/glad.c.o
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Vendor/GLAD/CMakeFiles/glad.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Vendor/GLAD/libglad.a
+  TARGET_PDB = glad.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build Vendor/GLAD/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLAD && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Vendor/GLAD/edit_cache: phony Vendor/GLAD/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Vendor/GLAD/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLAD && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing -B/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Vendor/GLAD/rebuild_cache: phony Vendor/GLAD/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
+build glad: phony Vendor/GLAD/libglad.a
+
 build glfw: phony Vendor/GLFW/src/libglfw3.a
+
+build libglad.a: phony Vendor/GLAD/libglad.a
 
 build libglfw3.a: phony Vendor/GLFW/src/libglfw3.a
 
@@ -357,7 +422,14 @@ build update_mappings: phony Vendor/GLFW/src/update_mappings
 #############################################
 # Folder: /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug
 
-build all: phony WeekendTracing Vendor/GLFW/all
+build all: phony WeekendTracing Vendor/GLFW/all Vendor/GLAD/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLAD
+
+build Vendor/GLAD/all: phony Vendor/GLAD/libglad.a
 
 # =============================================================================
 
@@ -380,14 +452,14 @@ build Vendor/GLFW/src/all: phony Vendor/GLFW/src/libglfw3.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../Vendor/GLFW/CMakeLists.txt ../Vendor/GLFW/src/CMakeLists.txt ../Vendor/GLFW/src/glfw3.pc.in ../Vendor/GLFW/src/glfw3Config.cmake.in ../Vendor/GLFW/src/glfw_config.h.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../Vendor/GLAD/CMakeLists.txt ../Vendor/GLFW/CMakeLists.txt ../Vendor/GLFW/src/CMakeLists.txt ../Vendor/GLFW/src/glfw3.pc.in ../Vendor/GLFW/src/glfw3Config.cmake.in ../Vendor/GLFW/src/glfw_config.h.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../Vendor/GLFW/CMakeLists.txt ../Vendor/GLFW/src/CMakeLists.txt ../Vendor/GLFW/src/glfw3.pc.in ../Vendor/GLFW/src/glfw3Config.cmake.in ../Vendor/GLFW/src/glfw_config.h.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../Vendor/GLAD/CMakeLists.txt ../Vendor/GLFW/CMakeLists.txt ../Vendor/GLFW/src/CMakeLists.txt ../Vendor/GLFW/src/glfw3.pc.in ../Vendor/GLFW/src/glfw3Config.cmake.in ../Vendor/GLFW/src/glfw_config.h.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -297,6 +297,15 @@ GLFW_USE_OSMESA:BOOL=OFF
 //Assume the Vulkan loader is linked with the application
 GLFW_VULKAN_STATIC:BOOL=OFF
 
+//Value Computed by CMake
+Glad_BINARY_DIR:STATIC=/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLAD
+
+//Value Computed by CMake
+Glad_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Glad_SOURCE_DIR:STATIC=/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD
+
 //Include for OpenGL on OS X
 OPENGL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework
 
@@ -444,7 +453,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
