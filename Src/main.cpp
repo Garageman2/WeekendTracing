@@ -119,11 +119,6 @@ int main() {
     //World
     auto World = RandomScene();
 
-    //Render
-   /* std::ofstream OutputFile;
-    OutputFile.open("Output.ppm");
-    OutputFile<<"P3\n"<< ImageWidth << ' ' << ImageHeight << "\n255\n";*/
-
    unsigned char Data[ImageWidth*ImageHeight*3] = {0};
 
     for (int j = ImageHeight-1; j>=0; j--)

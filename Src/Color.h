@@ -21,10 +21,5 @@ void WriteColor(T (&Data)[S], Color PixelColor, int SamplesPerPixel, int Index)
     Data[Index]   = static_cast<int>(255.999 * Clamp(R,0.0,0.999));
     Data[Index+1] = static_cast<int>(255.999 * Clamp(G,0.0,0.999));
     Data[Index+2] = static_cast<int>(255.999 * Clamp(B,0.0,0.999));
- //  Data[Index + 0] = 200;
- //  Data[Index + 1] = 200;
- //  Data[Index + 2] = 200;
-    /*out <<static_cast<int>(255.999 * Clamp(R,0.0,0.999))<< ' '
-        <<static_cast<int>(255.999 * Clamp(G,0.0,0.999))<< ' '
-        <<static_cast<int>(255.999 * Clamp(B,0.0,0.999))<< '\n';*/
+
 }
