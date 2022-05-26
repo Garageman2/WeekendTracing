@@ -8,6 +8,9 @@
 #include "Sphere.h"
 #include "Material.h"
 
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h"
+
 //TODO: STBI PNG
 //TODO: OPENGL IMPLEMENTATION
 //TODO: RENDER TRIANGLES IN OGL THEN PROJECT
@@ -21,12 +24,12 @@ HittableList RandomScene()
     auto GroundMaterial = make_shared<Lambertian>(Color(0.5,0.5,0.5));
     World.Add(make_shared<Sphere>(Point3(0,-1000,0),1000,GroundMaterial));
 
-    for(int A = -11; A < 11; A++)
+    for(int A = 0; A < 3; A++)
     {
-        for(int B = -11; B < 11; B++)
+        for(int B = 0; B < 3; B++)
         {
             double ChooseMat = RandomDouble();
-            Point3 Center(A + 0.9*RandomDouble(),0.2,B+0.9*RandomDouble());
+            Point3 Center(A*3.0 + 0.9*RandomDouble(),0.2,B*3.0+0.9*RandomDouble());
 
             if((Center-Point3(4.0,0.2,0.0)).Length() > 0.9)
             {
@@ -97,17 +100,17 @@ Color RayColor(const Ray& r, const Hittable& World, int Depth)
 int main() {
 
     //basics
-    const double AspectRatio = 3.0/2.0;
-    const int ImageWidth = 1200;
+    const double AspectRatio = 16.0/9.0;
+    const int ImageWidth = 128;
     const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
-    const int SamplesPerPixel = 500;
-    const int MaxDepth = 50;
+    const int SamplesPerPixel = 150;
+    const int MaxDepth = 25;
 
     //Camera
     auto R = cos(Pi/4);
     Point3 LookFrom(13,2,3);
     Point3 LookAt(0,0,0);
-    Vec3 VUp(0,1,0);
+    Vec3 VUp    (0,1,0);
     auto DistToFocus = 10.0;
     auto Aperture = 0.1;
 
@@ -117,9 +120,11 @@ int main() {
     auto World = RandomScene();
 
     //Render
-    std::ofstream OutputFile;
+   /* std::ofstream OutputFile;
     OutputFile.open("Output.ppm");
-    OutputFile<<"P3\n"<< ImageWidth << ' ' << ImageHeight << "\n255\n";
+    OutputFile<<"P3\n"<< ImageWidth << ' ' << ImageHeight << "\n255\n";*/
+
+   unsigned char Data[ImageWidth*ImageHeight*3] = {0};
 
     for (int j = ImageHeight-1; j>=0; j--)
     {
@@ -134,11 +139,13 @@ int main() {
                 Ray R = Cam.GetRay(U,V);
                 PixelColor += RayColor(R, World, MaxDepth);
             }
-            WriteColor(OutputFile,PixelColor,SamplesPerPixel);
+            WriteColor(Data,PixelColor,SamplesPerPixel, i + ((ImageHeight-j)*ImageWidth));
         }
+        stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
     }
 
-    OutputFile.close();
+    stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
+
 
     return 0;
 }

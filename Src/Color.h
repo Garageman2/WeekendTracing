@@ -2,8 +2,13 @@
 #include "Vector3.h"
 #include <iostream>
 
-void WriteColor(std::ostream &out, Color PixelColor, int SamplesPerPixel)
+
+
+template <typename T, std::size_t S>
+void WriteColor(T (&Data)[S], Color PixelColor, int SamplesPerPixel, int Index)
 {
+    Index *= 3;
+
     double R = PixelColor.x();
     double G = PixelColor.y();
     double B = PixelColor.z();
@@ -13,7 +18,13 @@ void WriteColor(std::ostream &out, Color PixelColor, int SamplesPerPixel)
     G = sqrt(sqrt(Scale * G));
     B = sqrt(sqrt(Scale * B));
 
-    out <<static_cast<int>(255.999 * Clamp(R,0.0,0.999))<< ' '
+    Data[Index]   = static_cast<int>(255.999 * Clamp(R,0.0,0.999));
+    Data[Index+1] = static_cast<int>(255.999 * Clamp(G,0.0,0.999));
+    Data[Index+2] = static_cast<int>(255.999 * Clamp(B,0.0,0.999));
+ //  Data[Index + 0] = 200;
+ //  Data[Index + 1] = 200;
+ //  Data[Index + 2] = 200;
+    /*out <<static_cast<int>(255.999 * Clamp(R,0.0,0.999))<< ' '
         <<static_cast<int>(255.999 * Clamp(G,0.0,0.999))<< ' '
-        <<static_cast<int>(255.999 * Clamp(B,0.0,0.999))<< '\n';
+        <<static_cast<int>(255.999 * Clamp(B,0.0,0.999))<< '\n';*/
 }
