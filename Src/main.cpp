@@ -11,9 +11,12 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
+#include "glfw3.h"
+
 //TODO: STBI PNG
 //TODO: OPENGL IMPLEMENTATION
 //TODO: RENDER TRIANGLES IN OGL THEN PROJECT
+//TODO: Match triangles
 //TODO: OGL QUAD VIEW WITH IMGui
 //TODO: ADD OIDN
 
@@ -98,6 +101,38 @@ Color RayColor(const Ray& r, const Hittable& World, int Depth)
 
 
 int main() {
+    GLFWwindow* window;
+
+    /* Initialize the library */
+    if (!glfwInit())
+        return -1;
+
+    /* Create a windowed mode window and its OpenGL context */
+    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    if (!window)
+    {
+        glfwTerminate();
+        return -1;
+    }
+
+    /* Make the window's context current */
+    glfwMakeContextCurrent(window);
+
+    /* Loop until the user closes the window */
+    while (!glfwWindowShouldClose(window))
+    {
+        /* Render here */
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        /* Swap front and back buffers */
+        glfwSwapBuffers(window);
+
+        /* Poll for and process events */
+        glfwPollEvents();
+    }
+
+    glfwTerminate();
+
 
     //basics
     const double AspectRatio = 16.0/9.0;
@@ -105,6 +140,7 @@ int main() {
     const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
     const int SamplesPerPixel = 150;
     const int MaxDepth = 25;
+
 
     //Camera
     auto R = cos(Pi/4);
@@ -136,11 +172,10 @@ int main() {
             }
             WriteColor(Data,PixelColor,SamplesPerPixel, i + ((ImageHeight-j)*ImageWidth));
         }
-        stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
+       // stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
     }
 
     stbi_write_jpg("RenderResult.jpg",ImageWidth,ImageHeight,3,Data,100);
-
 
     return 0;
 }

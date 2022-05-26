@@ -1,3 +1,9 @@
 /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/CMakeFiles/WeekendTracing.dir
 /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/CMakeFiles/edit_cache.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/CMakeFiles/rebuild_cache.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src/CMakeFiles/update_mappings.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src/CMakeFiles/glfw.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src/CMakeFiles/edit_cache.dir
+/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src/CMakeFiles/rebuild_cache.dir

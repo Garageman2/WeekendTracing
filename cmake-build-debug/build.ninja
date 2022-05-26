@@ -47,40 +47,40 @@ cmake_ninja_workdir = /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTr
 #############################################
 # Order-only phony target for WeekendTracing
 
-build cmake_object_order_depends_target_WeekendTracing: phony || CMakeFiles/WeekendTracing.dir
+build cmake_object_order_depends_target_WeekendTracing: phony || cmake_object_order_depends_target_glfw
 
 build CMakeFiles/WeekendTracing.dir/Src/main.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/main.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/main.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage
+  FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
 build CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/Sphere.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage
+  FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
 build CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/Hittable.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage
+  FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
 build CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/HittableList.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage
+  FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
 build CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/Camera.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage
+  FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
@@ -92,8 +92,9 @@ build CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o: CXX_COMPILER__WeekendTraci
 #############################################
 # Link the executable WeekendTracing
 
-build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o | Vendor/GLFW/src/libglfw3.a || Vendor/GLFW/src/libglfw3.a
+  FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = Vendor/GLFW/src/libglfw3.a  -framework Cocoa  -framework IOKit  -framework CoreFoundation
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -124,7 +125,229 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build Vendor/GLFW/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Vendor/GLFW/edit_cache: phony Vendor/GLFW/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Vendor/GLFW/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing -B/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Vendor/GLFW/rebuild_cache: phony Vendor/GLFW/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for update_mappings
+
+build Vendor/GLFW/src/update_mappings: phony Vendor/GLFW/src/CMakeFiles/update_mappings
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Order-only phony target for glfw
+
+build cmake_object_order_depends_target_glfw: phony || Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/context.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/init.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/input.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/input.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/monitor.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/vulkan.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/vulkan.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/window.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/cocoa_init.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_init.m.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/cocoa_joystick.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/cocoa_monitor.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/cocoa_window.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_window.m.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/cocoa_time.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_time.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/posix_thread.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/posix_thread.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/nsgl_context.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/nsgl_context.m.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/egl_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/egl_context.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+build Vendor/GLFW/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src/osmesa_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Vendor/GLFW/src/CMakeFiles/glfw.dir/osmesa_context.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Link the static library Vendor/GLFW/src/libglfw3.a
+
+build Vendor/GLFW/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug Vendor/GLFW/src/CMakeFiles/glfw.dir/context.c.o Vendor/GLFW/src/CMakeFiles/glfw.dir/init.c.o Vendor/GLFW/src/CMakeFiles/glfw.dir/input.c.o Vendor/GLFW/src/CMakeFiles/glfw.dir/monitor.c.o Vendor/GLFW/src/CMakeFiles/glfw.dir/vulkan.c.o Vendor/GLFW/src/CMakeFiles/glfw.dir/window.c.o Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_init.m.o Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_window.m.o Vendor/GLFW/src/CMakeFiles/glfw.dir/cocoa_time.c.o Vendor/GLFW/src/CMakeFiles/glfw.dir/posix_thread.c.o Vendor/GLFW/src/CMakeFiles/glfw.dir/nsgl_context.m.o Vendor/GLFW/src/CMakeFiles/glfw.dir/egl_context.c.o Vendor/GLFW/src/CMakeFiles/glfw.dir/osmesa_context.c.o
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Vendor/GLFW/src/CMakeFiles/glfw.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Vendor/GLFW/src/libglfw3.a
+  TARGET_PDB = glfw3.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build Vendor/GLFW/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Vendor/GLFW/src/edit_cache: phony Vendor/GLFW/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Vendor/GLFW/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing -B/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Vendor/GLFW/src/rebuild_cache: phony Vendor/GLFW/src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Custom command for Vendor/GLFW/src/CMakeFiles/update_mappings
+
+build Vendor/GLFW/src/CMakeFiles/update_mappings | ${cmake_ninja_workdir}Vendor/GLFW/src/CMakeFiles/update_mappings: CUSTOM_COMMAND
+  COMMAND = cd /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+  DESC = Updating gamepad mappings from upstream repository
+
+# =============================================================================
 # Target aliases.
+
+build glfw: phony Vendor/GLFW/src/libglfw3.a
+
+build libglfw3.a: phony Vendor/GLFW/src/libglfw3.a
+
+build update_mappings: phony Vendor/GLFW/src/update_mappings
 
 # =============================================================================
 # Folder targets.
@@ -134,7 +357,21 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug
 
-build all: phony WeekendTracing
+build all: phony WeekendTracing Vendor/GLFW/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW
+
+build Vendor/GLFW/all: phony Vendor/GLFW/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/cmake-build-debug/Vendor/GLFW/src
+
+build Vendor/GLFW/src/all: phony Vendor/GLFW/src/libglfw3.a
 
 # =============================================================================
 # Built-in targets
@@ -143,14 +380,14 @@ build all: phony WeekendTracing
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../Vendor/GLFW/CMakeLists.txt ../Vendor/GLFW/src/CMakeLists.txt ../Vendor/GLFW/src/glfw3.pc.in ../Vendor/GLFW/src/glfw3Config.cmake.in ../Vendor/GLFW/src/glfw_config.h.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../Vendor/GLFW/CMakeLists.txt ../Vendor/GLFW/src/CMakeLists.txt ../Vendor/GLFW/src/glfw3.pc.in ../Vendor/GLFW/src/glfw3Config.cmake.in ../Vendor/GLFW/src/glfw_config.h.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
 
 
 #############################################
