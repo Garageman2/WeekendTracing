@@ -9,6 +9,9 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
+#include "UI.h"
+#include "RT.h"
+
 
 //TODO: STBI PNG (DONE)
 //TODO: OPENGL IMPLEMENTATION (DONE)
@@ -167,6 +170,7 @@ int main()
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     ImGui::StyleColorsClassic();
+    StyleMono();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     std::cout << glGetString(GL_VERSION) <<std::endl;
     ImGui_ImplOpenGL3_Init("#version 150");
@@ -194,6 +198,12 @@ int main()
 
         ImGui::Begin("Window", &ShowGUI);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
         ImGui::Text("Hello from another window!");
+        if (ImGui::Button("Close Me"))
+            ShowGUI = false;
+        if(ImGui::Button("Render!"))
+        {
+            RayTrace(data, IWid, IHei);
+        }
         ImGui::End();
 
 

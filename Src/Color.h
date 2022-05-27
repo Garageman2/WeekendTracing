@@ -4,8 +4,7 @@
 
 
 
-template <typename T, std::size_t S>
-void WriteColor(T (&Data)[S], Color PixelColor, int SamplesPerPixel, int Index)
+void WriteColor(unsigned char* Data, Color PixelColor, int SamplesPerPixel, int Index)
 {
     Index *= 3;
 

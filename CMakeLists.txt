@@ -36,6 +36,7 @@ add_executable(WeekendTracing Src/main.cpp Src/Sphere.cpp Src/Hittable.cpp Src/H
         Vendor/IMGui/imstb_textedit.h
         Vendor/IMGui/imstb_truetype.h
         Vendor/IMGui/imgui_impl_opengl3_loader.h
+        Src/RT.cpp
         )
 
 target_link_libraries(WeekendTracing glfw)

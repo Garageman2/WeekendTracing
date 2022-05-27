@@ -93,12 +93,10 @@ Color RayColor(const Ray& r, const Hittable& World, int Depth)
     return (1.0-t)*Color(0.7,1.0,1.0) + t*Color(0.5,0.7,1.0);
 }
 
-void RayTrace()
+void RayTrace(unsigned char* data, int &ImageWidth, int &ImageHeight)
 {
 
     const double AspectRatio = 16.0/9.0;
-    const int ImageWidth = 128;
-    const int ImageHeight = static_cast<int>(ImageWidth / AspectRatio);
     const int SamplesPerPixel = 150;
     const int MaxDepth = 25;
 
@@ -115,8 +113,6 @@ void RayTrace()
 //World
     auto World = RandomScene();
 
-    unsigned char Data[ImageWidth * ImageHeight * 3] = {0};
-
     for (int j = ImageHeight - 1; j >= 0; j--) {
         std::cout << "Writing Line " << ImageHeight - j << " / " << ImageHeight << "\n";
         for (int i = 0; i < ImageWidth; i++) {
@@ -127,12 +123,13 @@ void RayTrace()
                 Ray R = Cam.GetRay(U, V);
                 PixelColor += RayColor(R, World, MaxDepth);
             }
-            WriteColor(Data, PixelColor, SamplesPerPixel, i + ((ImageHeight - j) * ImageWidth));
+            WriteColor(data, PixelColor, SamplesPerPixel, i + ((ImageHeight - j) * ImageWidth));
         }
-        stbi_write_jpg("RenderResult.jpg", ImageWidth, ImageHeight, 3, Data, 100);
+        stbi_write_jpg("RenderResult.jpg", ImageWidth, ImageHeight, 3, data, 100);
+        //TODO: Write function in main that can be called here that binds and rewrites texture
     }
 
 //WARNING: this write doesn't seem to be working? GLFW crashes here maybe
-    stbi_write_jpg("RenderResult.jpg", ImageWidth, ImageHeight, 3, Data, 100);
+    stbi_write_jpg("RenderResult.jpg", ImageWidth, ImageHeight, 3, data, 100);
     return;
 }
