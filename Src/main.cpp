@@ -1,13 +1,18 @@
 #include "glad/glad.h"
 #include "glfw3.h"
 #include <iostream>
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
 
-//TODO: STBI PNG
-//TODO: OPENGL IMPLEMENTATION
-//TODO: RENDER TRIANGLES IN OGL THEN PROJECT
+
+//TODO: STBI PNG (DONE)
+//TODO: OPENGL IMPLEMENTATION (DONE)
+//TODO: RENDER TRIANGLES IN OGL THEN PROJECT (DONE)
 //TODO: MOVE MAIN WITH GL STUFF TO NEW FILE MAKE THIS A CALLABLE FUNCTION
 //TODO: Match triangles
 //TODO: RAYTRACE TRIS
@@ -158,18 +163,39 @@ int main()
         std::cout << "Failed to load texture" << std::endl;
     }
 
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGui::StyleColorsClassic();
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    std::cout << glGetString(GL_VERSION) <<std::endl;
+    ImGui_ImplOpenGL3_Init("#version 150");
+
 
 
     glViewport(300,400,ImageWidth,ImageHeight);
     // render loop
     // -----------
+
+    bool ShowGUI =  true;
+
     while (!glfwWindowShouldClose(window))
     {
+
 
         // render
         // ------
         glClearColor(0.3f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
+        ImGui::Begin("Window", &ShowGUI);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+        ImGui::Text("Hello from another window!");
+        ImGui::End();
+
 
         // draw our first triangle
         glUseProgram(shaderProgram);
@@ -180,8 +206,12 @@ int main()
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         glBindTexture(GL_TEXTURE_2D, texture);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-        // glBindVertexArray(0); // no need to unbind it every time
 
+        ImGui::Render();
+
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+        // glBindVertexArray(0); // no need to unbind it every time
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
@@ -196,6 +226,11 @@ int main()
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
+
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
+
     glfwTerminate();
     return 0;
 
