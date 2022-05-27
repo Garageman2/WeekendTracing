@@ -57,7 +57,9 @@ int main()
     int IWid = ImageWidth;
     int IHei = ImageHeight;
     int Channels = 3;
-    unsigned char *data = stbi_load("RenderResult.jpg", &IWid, &IHei, &Channels, 0);
+
+
+    unsigned char* data = stbi_load("RenderResult.jpg", &IWid, &IHei, &Channels, 0);
 
     GLFWwindow* window = glfwCreateWindow(600, 600, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
@@ -169,7 +171,7 @@ int main()
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
-    ImGui::StyleColorsClassic();
+    ImGui::StyleColorsDark();
     StyleMono();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     std::cout << glGetString(GL_VERSION) <<std::endl;
@@ -191,15 +193,13 @@ int main()
         // ------
         glClearColor(0.3f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-
+        
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        ImGui::Begin("Window", &ShowGUI);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+        ImGui::Begin("Window");   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
         ImGui::Text("Hello from another window!");
-        if (ImGui::Button("Close Me"))
-            ShowGUI = false;
         if(ImGui::Button("Render!"))
         {
             RayTrace(data, IWid, IHei);
@@ -244,7 +244,12 @@ int main()
     glfwTerminate();
     return 0;
 
-
-
-    return 0;
 }
+
+
+void UpdateTex(unsigned char* data, int IWid, int IHei)
+{
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, IWid,IHei, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+}
+

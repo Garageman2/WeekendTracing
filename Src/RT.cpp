@@ -9,6 +9,7 @@
 #include "HittableList.h"
 #include "Sphere.h"
 #include "Material.h"
+#include "RT.h"
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
@@ -21,7 +22,7 @@ HittableList RandomScene()
     auto GroundMaterial = make_shared<Lambertian>(Color(0.5,0.5,0.5));
     World.Add(make_shared<Sphere>(Point3(0,-1000,0),1000,GroundMaterial));
 
-    for(int A = 0; A < 3; A++)
+    for(int A = 0; A < 2; A++)
     {
         for(int B = 0; B < 3; B++)
         {
@@ -126,6 +127,7 @@ void RayTrace(unsigned char* data, int &ImageWidth, int &ImageHeight)
             WriteColor(data, PixelColor, SamplesPerPixel, i + ((ImageHeight - j) * ImageWidth));
         }
         stbi_write_jpg("RenderResult.jpg", ImageWidth, ImageHeight, 3, data, 100);
+        UpdateTex(data,ImageWidth,ImageHeight);
         //TODO: Write function in main that can be called here that binds and rewrites texture
     }
 
