@@ -11,6 +11,6 @@ inline void StyleMono(float Mult = .65)
         ImVec4 Base = Colors[i];
         float Val = sqrt((Base.x * Base.x) + (Base.y * Base.y) + (Base.z * Base.z));
         Val = Val * Mult;
-         Colors[i] = ImVec4(Val,Val,Val,Base.w);
+         Colors[i] = ImVec4(Val,Val,Val,1.0);
     }
 }

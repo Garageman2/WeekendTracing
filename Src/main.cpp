@@ -61,7 +61,7 @@ int main()
 
     unsigned char* data = stbi_load("RenderResult.jpg", &IWid, &IHei, &Channels, 0);
 
-    GLFWwindow* window = glfwCreateWindow(600, 600, "LearnOpenGL", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(2*ImageWidth, 2 * ImageHeight, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -168,9 +168,12 @@ int main()
         std::cout << "Failed to load texture" << std::endl;
     }
 
-    IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+    io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+    io.ConfigDockingWithShift = false;
+
     ImGui::StyleColorsDark();
     StyleMono();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -179,7 +182,7 @@ int main()
 
 
 
-    glViewport(300,400,ImageWidth,ImageHeight);
+    glViewport(1.5*ImageWidth,3*ImageHeight,ImageWidth,ImageHeight);
     // render loop
     // -----------
 
@@ -198,12 +201,28 @@ int main()
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        ImGui::Begin("Window");   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+        ImGui::ShowDemoWindow();
+
+        ImGui::Begin("Window 1",nullptr,ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse);
+        ImGui::SetWindowPos(ImVec2(0,0));
+        ImGui::SetWindowSize(ImVec2(ImageWidth * .75, ImageHeight * 3));
         ImGui::Text("Hello from another window!");
         if(ImGui::Button("Render!"))
         {
             RayTrace(data, IWid, IHei);
         }
+        ImGui::End();
+
+        ImGui::Begin("Window 2",nullptr,ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse);
+        ImGui::Text("Dummy Window");
+        ImGui::SetWindowPos(ImVec2(ImageWidth * .75,ImageHeight/2));
+        ImGui::SetWindowSize(ImVec2(ImageWidth * .5, ImageHeight * 2));
+        ImGui::End();
+
+        ImGui::Begin("Window 3",nullptr,ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse);
+        ImGui::SetWindowPos(ImVec2(ImageWidth * 1.25,0));
+        ImGui::SetWindowSize(ImVec2(ImageWidth * .75, ImageHeight * 3));
+        ImGui::Text("Hello from another window!");
         ImGui::End();
 
 

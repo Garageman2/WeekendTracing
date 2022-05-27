@@ -84,6 +84,13 @@ build CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o: CXX_COMPILER__WeekendTraci
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
 
+build CMakeFiles/WeekendTracing.dir/Src/RT.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/RT.cpp || cmake_object_order_depends_target_WeekendTracing
+  DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/RT.cpp.o.d
+  FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
+  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/IMGui -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/include
+  OBJECT_DIR = CMakeFiles/WeekendTracing.dir
+  OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
+
 build CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/IMGui/imgui.cpp || cmake_object_order_depends_target_WeekendTracing
   DEP_FILE = CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui.cpp.o.d
   FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
@@ -133,13 +140,6 @@ build CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_widgets.cpp.o: CXX_COMPIL
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir
   OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Vendor/IMGui
 
-build CMakeFiles/WeekendTracing.dir/Src/RT.cpp.o: CXX_COMPILER__WeekendTracing_Debug /Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src/RT.cpp || cmake_object_order_depends_target_WeekendTracing
-  DEP_FILE = CMakeFiles/WeekendTracing.dir/Src/RT.cpp.o.d
-  FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
-  INCLUDES = -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Src -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/STBImage -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include/GLFW -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/IMGui -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLFW/include -I/Users/Bailey/Desktop/Things/Code/WeekendTracing/WeekendTracing/Vendor/GLAD/include
-  OBJECT_DIR = CMakeFiles/WeekendTracing.dir
-  OBJECT_FILE_DIR = CMakeFiles/WeekendTracing.dir/Src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target WeekendTracing
@@ -148,7 +148,7 @@ build CMakeFiles/WeekendTracing.dir/Src/RT.cpp.o: CXX_COMPILER__WeekendTracing_D
 #############################################
 # Link the executable WeekendTracing
 
-build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_demo.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_draw.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_impl_glfw.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_impl_opengl3.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_tables.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_widgets.cpp.o CMakeFiles/WeekendTracing.dir/Src/RT.cpp.o | Vendor/GLFW/src/libglfw3.a Vendor/GLAD/libglad.a || Vendor/GLAD/libglad.a Vendor/GLFW/src/libglfw3.a
+build WeekendTracing: CXX_EXECUTABLE_LINKER__WeekendTracing_Debug CMakeFiles/WeekendTracing.dir/Src/main.cpp.o CMakeFiles/WeekendTracing.dir/Src/Sphere.cpp.o CMakeFiles/WeekendTracing.dir/Src/Hittable.cpp.o CMakeFiles/WeekendTracing.dir/Src/HittableList.cpp.o CMakeFiles/WeekendTracing.dir/Src/Camera.cpp.o CMakeFiles/WeekendTracing.dir/Src/RT.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_demo.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_draw.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_impl_glfw.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_impl_opengl3.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_tables.cpp.o CMakeFiles/WeekendTracing.dir/Vendor/IMGui/imgui_widgets.cpp.o | Vendor/GLFW/src/libglfw3.a Vendor/GLAD/libglad.a || Vendor/GLAD/libglad.a Vendor/GLFW/src/libglfw3.a
   FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   LINK_LIBRARIES = Vendor/GLFW/src/libglfw3.a  Vendor/GLAD/libglad.a  -framework Cocoa  -framework IOKit  -framework CoreFoundation
   OBJECT_DIR = CMakeFiles/WeekendTracing.dir

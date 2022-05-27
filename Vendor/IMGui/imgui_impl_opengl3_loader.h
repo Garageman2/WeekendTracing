@@ -110,7 +110,7 @@ extern "C" {
 ** included as <GL/glcorearb.h>.
 **
 ** glcorearb.h includes only APIs in the latest OpenGL core profile
-** implementation together with APIs in newer ARB extensions which
+** implementation together with APIs in newer ARB extensions which 
 ** can be supported by the core profile. It does not, and never will
 ** include functionality removed from the core profile, such as
 ** fixed-function vertex and fragment processing.
@@ -164,8 +164,6 @@ typedef khronos_uint8_t GLubyte;
 #define GL_FLOAT                          0x1406
 #define GL_RGBA                           0x1908
 #define GL_FILL                           0x1B02
-#define GL_VENDOR                         0x1F00
-#define GL_RENDERER                       0x1F01
 #define GL_VERSION                        0x1F02
 #define GL_EXTENSIONS                     0x1F03
 #define GL_LINEAR                         0x2601
